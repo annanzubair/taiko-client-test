@@ -104,6 +104,8 @@ func (p *Proposer) InitFromConfig(ctx context.Context, cfg *Config) (err error) 
 		return err
 	}
 
+	log.Info("T1", "test", &metrics.TxMgrMetrics, *cfg.TxmgrConfigs)
+	
 	txmgr, err := txmgr.NewSimpleTxManager(
 		"proposer",
 		log.Root(),
